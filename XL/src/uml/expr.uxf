@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>270</y>
+      <w>220</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Här kan vi göra våra UML</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
