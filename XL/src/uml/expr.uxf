@@ -1,15 +1,265 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="13.3">
-  <zoom_level>10</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>210</x>
-      <y>270</y>
-      <w>220</w>
-      <h>30</h>
+      <x>301</x>
+      <y>35</y>
+      <w>203</w>
+      <h>91</h>
     </coordinates>
-    <panel_attributes>Här kan vi göra våra UML</panel_attributes>
+    <panel_attributes>/AbstractClass/
+Expr
+--
++ toString(): String
++ toString(int): String {abstract}
++ value(Enviroment): double {abstract}
+
+</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>210</y>
+      <w>210</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>/AbstractClass/
+BinaryExpr
+--
+- expr1: Expr
+- expr2: Expr
+# precedence1: int
+# precedence2: int
+--
+# BinaryExpr(Expr, Expr)
++ value(Enviroment): double
++ toString(int): String
+# op(double, double): double {abstract}
+# opString(): String {abstract}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>798</w>
+      <h>553</h>
+    </coordinates>
+    <panel_attributes>expr
+--
+bg=gray
+fg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>392</y>
+      <w>154</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Add
+--
++ Add(Expr, Expr)
++ op(double, double): double
+# opString(): String </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>413</x>
+      <y>119</y>
+      <w>203</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0;270.0;90.0;270.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>434</x>
+      <y>392</y>
+      <w>154</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Mul
+--
++ Mul(Expr, Expr)
++ op(double, double): double
+# opString(): String </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>483</y>
+      <w>154</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Sub
+--
++ Sub(Expr, Expr)
++ op(double, double): double
+# opString(): String </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>434</x>
+      <y>483</y>
+      <w>154</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Div
+--
++ Div(Expr, Expr)
++ op(double, double): double
+# opString(): String </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>602</x>
+      <y>343</y>
+      <w>42</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;250.0;40.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>602</x>
+      <y>343</y>
+      <w>42</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0;40.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>581</x>
+      <y>343</y>
+      <w>42</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>40.0;10.0;40.0;110.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>581</x>
+      <y>343</y>
+      <w>42</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>40.0;10.0;40.0;250.0;10.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>238</x>
+      <y>427</y>
+      <w>154</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>ExprParser
+--
+- token: int
+- tokenizer: StreamTokenizer
+--
++ build(Reader): Expr
++ build(String): Expr
+- expr(): Expr
+- factor(): Expr
+- term(): Expr</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>42</x>
+      <y>455</y>
+      <w>126</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+Enviroment
+--
++ value(String): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>231</x>
+      <y>252</y>
+      <w>175</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>Variable
+--
+- name: String
+--
++ Variable(String)
++ toString(int): String
++ value(Enviroment): double</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>35</x>
+      <y>252</y>
+      <w>175</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>Num
+--
+_- adjustment: NumberAdjustment_
+- value: double
+--
++ Num(double)
++ toString(int): String
++ value(Enviroment): double</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>308</x>
+      <y>119</y>
+      <w>126</w>
+      <h>147</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>160.0;10.0;160.0;90.0;10.0;90.0;10.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>119</x>
+      <y>119</y>
+      <w>315</w>
+      <h>147</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>430.0;10.0;430.0;90.0;10.0;90.0;10.0;190.0</additional_attributes>
   </element>
 </diagram>
