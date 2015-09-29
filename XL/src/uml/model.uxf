@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="13.3">
-  <zoom_level>9</zoom_level>
+  <zoom_level>12</zoom_level>
   <element>
     <id>UMLPackage</id>
     <coordinates>
       <x>0</x>
       <y>0</y>
-      <w>792</w>
-      <h>630</h>
+      <w>1056</w>
+      <h>840</h>
     </coordinates>
     <panel_attributes>model
 --
@@ -18,10 +18,10 @@ fg=green</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>63</x>
-      <y>54</y>
-      <w>126</w>
-      <h>63</h>
+      <x>84</x>
+      <y>72</y>
+      <w>168</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>expr
 --
@@ -34,10 +34,10 @@ fg=red
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>63</x>
-      <y>234</y>
-      <w>171</w>
-      <h>108</h>
+      <x>84</x>
+      <y>312</y>
+      <w>228</w>
+      <h>156</h>
     </coordinates>
     <panel_attributes>Sheet
 --
@@ -47,16 +47,18 @@ fg=red
 + put(String, Expr): void
 + replace(String, Expr): void
 + remove(String): void
++ getExpr(String): Expr
++ value(String): double
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>72</x>
-      <y>108</y>
-      <w>90</w>
-      <h>144</h>
+      <x>96</x>
+      <y>144</y>
+      <w>120</w>
+      <h>192</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.
 Enviroment</panel_attributes>
@@ -65,10 +67,10 @@ Enviroment</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>306</x>
-      <y>45</y>
-      <w>189</w>
-      <h>72</h>
+      <x>408</x>
+      <y>60</y>
+      <w>252</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>Observable
 --
@@ -80,10 +82,10 @@ Enviroment</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>171</x>
-      <y>108</y>
-      <w>207</w>
-      <h>144</h>
+      <x>228</x>
+      <y>144</y>
+      <w>276</w>
+      <h>192</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>210.0;10.0;210.0;70.0;10.0;70.0;10.0;140.0</additional_attributes>

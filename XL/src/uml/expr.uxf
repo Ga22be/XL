@@ -50,7 +50,7 @@ BinaryExpr
       <w>798</w>
       <h>553</h>
     </coordinates>
-    <panel_attributes>expr
+    <panel_attributes>model.expr
 --
 bg=gray
 fg=red</panel_attributes>
