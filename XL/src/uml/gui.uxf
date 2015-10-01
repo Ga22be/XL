@@ -489,42 +489,6 @@ Observer
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>658</x>
-      <y>175</y>
-      <w>70</w>
-      <h>21</h>
-    </coordinates>
-    <panel_attributes>BufferReader</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>616</x>
-      <y>217</y>
-      <w>154</w>
-      <h>49</h>
-    </coordinates>
-    <panel_attributes>XLBufferReader
---
-+ XLBufferReader(String)
-+ load(Map&lt;String, Expr&gt;): void</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>686</x>
-      <y>189</y>
-      <w>21</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
       <x>462</x>
@@ -534,41 +498,5 @@ Observer
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;30.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>658</x>
-      <y>308</y>
-      <w>70</w>
-      <h>21</h>
-    </coordinates>
-    <panel_attributes>PrintStream</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>602</x>
-      <y>350</y>
-      <w>175</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>XLPrintStream
---
-+ XLPrintStream(String)
-+ save(Set&lt;Entry&lt;String, Expr&gt;&gt;): void</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>686</x>
-      <y>322</y>
-      <w>21</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
   </element>
 </diagram>
