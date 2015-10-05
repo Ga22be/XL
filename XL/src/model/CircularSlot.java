@@ -1,6 +1,7 @@
 package model;
 
 import model.expr.Expr;
+import model.expr.Environment;
 
 public class CircularSlot implements Slot {
 
@@ -13,13 +14,13 @@ public class CircularSlot implements Slot {
 	}
 
 	@Override
-	public void getExpr(Expr expr) {
+	public Expr getExpr() {
 		// TODO Auto-generated method stub
-
+		return null;
 	}
 
 	@Override
-	public double value() {
+	public double value(Environment env) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

@@ -1,34 +1,36 @@
 package model;
 
 import model.expr.Expr;
+import model.expr.Environment;
 
 public class ExprSlot implements Slot {
 	
 	private Expr expr;
 	private String address;
 	
+	public ExprSlot(Expr expr, String address){
+		this.expr = expr;
+		this.address = address;
+	}
+	
 	@Override
 	public void setExpr(Expr expr) {
-		// TODO Auto-generated method stub
-
+		this.expr = expr;
 	}
 
 	@Override
-	public void getExpr(Expr expr) {
-		// TODO Auto-generated method stub
-
+	public Expr getExpr() {
+		return expr;
 	}
 
 	@Override
-	public double value() {
-		// TODO Auto-generated method stub
-		return 0;
+	public double value(Environment env) {
+		return expr.value(env);
 	}
 
 	@Override
 	public String address() {
-		// TODO Auto-generated method stub
-		return null;
+		return address;
 	}
 
 }

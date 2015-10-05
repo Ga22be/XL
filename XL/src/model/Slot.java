@@ -1,14 +1,15 @@
 package model;
 
 import model.expr.Expr;
+import model.expr.Environment;
 
 public interface Slot {
 	
 	void setExpr(Expr expr);
 	
-	void getExpr(Expr expr);
+	Expr getExpr();
 	
-	double value();
+	double value(Environment env);
 	
 	String address();
 }
