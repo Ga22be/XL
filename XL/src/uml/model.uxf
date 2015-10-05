@@ -4,8 +4,8 @@
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>48</x>
-      <y>24</y>
+      <x>56</x>
+      <y>16</y>
       <w>704</w>
       <h>560</h>
     </coordinates>
@@ -37,12 +37,13 @@ fg=red
       <x>128</x>
       <y>232</y>
       <w>152</w>
-      <h>104</h>
+      <h>152</h>
     </coordinates>
     <panel_attributes>Sheet
 --
 - sheet: Map&lt;String, Expr&gt;
 --
+
 + save(): void
 + load(String): void
 + put(String, Slot): void
@@ -177,7 +178,7 @@ Slot
 + setExpr(Expr): void
 + getExpr(): Expr
 + value(): double
-+ adress(): String</panel_attributes>
++ address(): String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -218,12 +219,12 @@ Expr</panel_attributes>
     <panel_attributes>ExprSlot
 --
 - expr: Expr
-- adress: String
+- address: String
 --
 + setExpr(Expr): void
 + getExpr(): Expr
 + value(): double
-+ adress(): String</panel_attributes>
++ address(): String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -237,12 +238,12 @@ Expr</panel_attributes>
     <panel_attributes>CommentSlot
 --
 - comment: Comment
-- adress: String
+- address: String
 --
 + setExpr(Expr): void
 + getExpr(): Expr
 + value(): double
-+ adress(): String</panel_attributes>
++ address(): String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -260,7 +261,7 @@ Expr</panel_attributes>
 + setExpr(Expr): void
 + getExpr(): Expr
 + value(): double
-+ adress(): String</panel_attributes>
++ address(): String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
