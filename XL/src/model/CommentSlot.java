@@ -1,6 +1,5 @@
 package model;
 
-import model.expr.Expr;
 import model.expr.Environment;
 
 public class CommentSlot implements Slot {
@@ -8,28 +7,27 @@ public class CommentSlot implements Slot {
 	private Comment comment;
 	private String address;
 	
-	@Override
-	public void setExpr(Expr expr) {
-		// TODO Auto-generated method stub
-
+	public CommentSlot (Comment comment, String address) {
+		this.comment = comment;
+		this.address = address;
+	}
+	
+	public void setComment(Comment comment) {
+		this.comment = comment;
 	}
 
-	@Override
-	public Expr getExpr() {
-		// TODO Auto-generated method stub
-		return null;
+	public Comment getComment() {
+		return comment;
 	}
 
 	@Override
 	public double value(Environment env) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public String address() {
-		// TODO Auto-generated method stub
-		return null;
+		return address;
 	}
 
 }

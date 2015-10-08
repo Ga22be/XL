@@ -6,18 +6,6 @@ import model.expr.Environment;
 public class CircularSlot implements Slot {
 
 	private String command;
-	
-	@Override
-	public void setExpr(Expr expr) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public Expr getExpr() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public double value(Environment env) {

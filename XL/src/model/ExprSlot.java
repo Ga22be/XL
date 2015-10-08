@@ -13,12 +13,10 @@ public class ExprSlot implements Slot {
 		this.address = address;
 	}
 	
-	@Override
 	public void setExpr(Expr expr) {
 		this.expr = expr;
 	}
 
-	@Override
 	public Expr getExpr() {
 		return expr;
 	}
