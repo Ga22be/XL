@@ -21,7 +21,7 @@ public class Sheet extends Observable implements Environment{
 	
 	public void load(String fileName) throws FileNotFoundException{
 		XLBufferedReader reader = new XLBufferedReader(fileName);
-		reader.load(sheet);
+//		reader.load(sheet);
 	}
 	
 	public void put(String address, Slot slot){
