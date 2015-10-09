@@ -4,7 +4,9 @@ import model.expr.Environment;
 
 public interface Slot {
 	
-	double value(Environment env);
+	public double value(Environment env);
 	
-	String address();
+	public String address();
+	
+	public String toString();
 }

@@ -30,4 +30,8 @@ public class CommentSlot implements Slot {
 		return address;
 	}
 
+	@Override
+	public String toString(){
+		return comment.toString();
+	}
 }

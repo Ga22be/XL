@@ -1,22 +1,29 @@
 package model;
 
-import model.expr.Expr;
 import model.expr.Environment;
 
 public class CircularSlot implements Slot {
 
 	private String command;
+	private String address;
+	
+	public CircularSlot (String command, String address){
+		this.command = command;
+		this.address = address;
+	}
 
 	@Override
 	public double value(Environment env) {
-		// TODO Auto-generated method stub
-		return 0;
+		throw new IllegalArgumentException("Circular dependency in input");
 	}
-
+	
 	@Override
 	public String address() {
-		// TODO Auto-generated method stub
-		return null;
+		return address;
 	}
-
+	
+	@Override
+	public String toString(){
+		return command;
+	}
 }

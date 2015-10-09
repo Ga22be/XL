@@ -30,5 +30,10 @@ public class ExprSlot implements Slot {
 	public String address() {
 		return address;
 	}
+	
+	@Override
+	public String toString(){
+		return expr.toString();
+	}
 
 }
