@@ -17,11 +17,12 @@ public class Sheet extends Observable implements Environment{
 	
 	public void save(String fileName) throws FileNotFoundException{
 		XLPrintStream printer = new XLPrintStream(fileName);
+		printer.save(sheet.entrySet());
 	}
 	
 	public void load(String fileName) throws FileNotFoundException{
 		XLBufferedReader reader = new XLBufferedReader(fileName);
-//		reader.load(sheet);
+        reader.load(sheet);
 	}
 	
 	public void put(String address, Slot slot){
