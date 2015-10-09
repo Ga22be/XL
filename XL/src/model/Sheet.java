@@ -34,6 +34,7 @@ public class Sheet extends Observable implements Environment{
 	
 	public void remove(String address){
 		sheet.remove(address);
+		
 	}
 	
 	public Slot getSlot(String address){
