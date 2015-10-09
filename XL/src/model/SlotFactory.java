@@ -3,7 +3,7 @@ package model;
 
 public class SlotFactory {
 
-	public Slot generateSlot(String address, String command){
+	public static Slot generateSlot(String address, String command){
 		return null;
 	}
 }
