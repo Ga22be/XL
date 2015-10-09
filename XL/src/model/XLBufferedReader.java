@@ -21,6 +21,8 @@ public class XLBufferedReader extends BufferedReader {
                 String string = readLine();
                 int i = string.indexOf('=');
                 // TODO
+                String address = string.substring(0, i);
+                String slot = string.substring(i + 1);
             }
         } catch (Exception e) {
             throw new XLException(e.getMessage());
