@@ -8,22 +8,19 @@ import java.util.Map;
 import util.XLException;
 
 
-//TODO move to another package
 public class XLBufferedReader extends BufferedReader {
     public XLBufferedReader(String name) throws FileNotFoundException {
         super(new FileReader(name));
     }
 
-    
-    // TODO Change Object to something appropriate
     public void load(Map<String, Slot> map) {
         try {
             while (ready()) {
                 String string = readLine();
                 int i = string.indexOf('=');
-                // TODO
                 String address = string.substring(0, i);
-                String slot = string.substring(i + 1);
+                String command = string.substring(i + 1);
+                map.put(address, SlotFactory.generateSlot(command, address));
             }
         } catch (Exception e) {
             throw new XLException(e.getMessage());
