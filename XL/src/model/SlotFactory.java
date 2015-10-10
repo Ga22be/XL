@@ -18,6 +18,7 @@ public class SlotFactory {
 			try {
 				expr = ex.build(command);
 			} catch (IOException e) {
+				e.printStackTrace();
 			}
 			return new ExprSlot(expr, address);
 		}
