@@ -27,14 +27,17 @@ public class Sheet extends Observable implements Environment{
 	
 	public void put(String address, Slot slot){
 		sheet.put(address, slot);
+		notifyObservers();
 	}
 	
 	public void replace(String address, Slot slot){
 		sheet.replace(address, slot);
+		notifyObservers();
 	}
 	
 	public void remove(String address){
 		sheet.remove(address);
+		notifyObservers();
 	}
 	
 	public Slot getSlot(String address){
