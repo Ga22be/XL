@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Observable;
 
 import model.expr.Environment;
-import model.expr.Expr;
+import util.XLException;
 
 public class Sheet extends Observable implements Environment{
 	private Map<String, Slot> sheet;
@@ -32,9 +32,9 @@ public class Sheet extends Observable implements Environment{
 	}
 	
 	public void replace(String address, Slot slot){
-		sheet.replace(address, slot);
+		sheet.put(address, slot);
 		setChanged();
-		notifyObservers();
+		notifyObservers();	
 	}
 	
 	public void remove(String address){
@@ -43,13 +43,36 @@ public class Sheet extends Observable implements Environment{
 		notifyObservers();
 	}
 	
+	public String getSlotValue(String address){
+		Slot s = getSlot(address);
+		if(s == null){
+			return "";
+		} else if (s instanceof CommentSlot){
+			return ((CommentSlot) s).getCommentValue();
+		}
+		
+		return String.valueOf(getSlot(address).value(this));
+	}
+	
+	public String getSlotString(String address){
+		Slot s = getSlot(address);
+		if(s == null){
+			return "";
+		}
+		return getSlot(address).toString();
+	}
+	
 	public Slot getSlot(String address){
 		return sheet.get(address);
 	}
 	
 	@Override
 	public double value(String address) {
-		return sheet.get(address).value(this);
+		Slot s = sheet.get(address);
+		if(s == null){
+			throw new XLException("Empty Slot " + address);
+		}
+		return s.value(this);
 	}
 
 }

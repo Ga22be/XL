@@ -47,8 +47,8 @@ public class Editor extends JTextField implements ActionListener, Observer {
 			}
 		} else {
 			try {
-//				sheet.put(address, SlotFactory.generateSlot(address, getText()));
-				sheet.put(address, SlotFactory.generateSlot(getText(), address));
+				sheet.put(address, SlotFactory.generateSlot(address, getText()));
+//				sheet.put(address, SlotFactory.generateSlot(getText(), address));
 			} catch (XLException exc) {
 				sl.setText(exc.getMessage());
 			}
