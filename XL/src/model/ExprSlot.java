@@ -5,12 +5,12 @@ import model.expr.Environment;
 
 public class ExprSlot implements Slot {
 	
-	private Expr expr;
 	private String address;
+	private Expr expr;
 	
-	public ExprSlot(Expr expr, String address){
-		this.expr = expr;
+	public ExprSlot(String address, Expr expr){
 		this.address = address;
+		this.expr = expr;
 	}
 	
 	public void setExpr(Expr expr) {
