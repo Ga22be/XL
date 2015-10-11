@@ -32,9 +32,8 @@ public class XL extends JFrame implements Printable {
         xlList.add(this);
         counter.increment();
         Handler handler = new Handler();
-        TemporarySheetObserver so = new TemporarySheetObserver(handler);
         sheet = new Sheet();
-        sheet.addObserver(so);
+        sheet.addObserver(handler);
         CurrentSlot cs = new CurrentSlot(handler);
         JPanel statusPanel = new StatusPanel(statusLabel, cs, handler);
         JPanel sheetPanel = new SheetPanel(ROWS, COLUMNS, cs, handler, sheet, statusLabel);
