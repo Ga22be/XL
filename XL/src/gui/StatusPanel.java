@@ -7,11 +7,8 @@ import java.util.Observable;
 import java.util.Observer;
 
 public class StatusPanel extends BorderPanel{
-    protected StatusPanel(StatusLabel statusLabel, Current current) {
-    	CurrentLabel cl = new CurrentLabel();
-    	current.addObserver(cl);
-    	current.addObserver(statusLabel);
-        add(WEST, cl);
+    protected StatusPanel(StatusLabel statusLabel, CurrentSlot cs, Handler handler) {
+        add(WEST, new CurrentLabel(cs, handler));
         add(CENTER, statusLabel);
     }
 }
