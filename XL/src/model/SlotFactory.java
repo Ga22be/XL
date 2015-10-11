@@ -7,7 +7,7 @@ import model.expr.ExprParser;
 
 public class SlotFactory {
 
-	public static Slot generateSlot(String command, String address) {
+	public static Slot generateSlot(String address, String command) {
 		if (command.startsWith("#")) {
 			return new CommentSlot(new Comment(command.substring(1)), address);
 		} else if (command.contains(address)) {
