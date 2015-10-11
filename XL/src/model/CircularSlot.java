@@ -4,12 +4,12 @@ import model.expr.Environment;
 
 public class CircularSlot implements Slot {
 
-	private String command;
 	private String address;
+	private String command;
 	
-	public CircularSlot (String command, String address){
-		this.command = command;
+	public CircularSlot (String address, String command){
 		this.address = address;
+		this.command = command;
 	}
 
 	@Override

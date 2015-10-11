@@ -4,12 +4,12 @@ import model.expr.Environment;
 
 public class CommentSlot implements Slot {
 
-	private Comment comment;
 	private String address;
+	private Comment comment;
 	
-	public CommentSlot (Comment comment, String address) {
-		this.comment = comment;
+	public CommentSlot (String address, Comment comment) {
 		this.address = address;
+		this.comment = comment;
 	}
 	
 	public void setComment(Comment comment) {
