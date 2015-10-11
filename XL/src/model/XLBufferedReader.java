@@ -20,7 +20,7 @@ public class XLBufferedReader extends BufferedReader {
                 int i = string.indexOf('=');
                 String address = string.substring(0, i);
                 String command = string.substring(i + 1);
-                map.put(address, SlotFactory.generateSlot(command, address));
+                map.put(address, SlotFactory.generateSlot(address, command));
             }
         } catch (Exception e) {
             throw new XLException(e.getMessage());

@@ -8,7 +8,6 @@ import javax.swing.SwingConstants;
 
 import model.Sheet;
 
-//public class SlotLabels extends GridPanel implements MouseListener{
 public class SlotLabels extends GridPanel {
     private List<SlotLabel> labelList;
     private Sheet sheet;
@@ -27,10 +26,14 @@ public class SlotLabels extends GridPanel {
         for (int row = 1; row <= rows; row++) {
             for (char ch = 'A'; ch < 'A' + cols; ch++) {
                 SlotLabel label = new SlotLabel(String.valueOf(ch)+row, cs, sheet, sl, handler);
+                handler.addObserver(label);
                 add(label);
                 labelList.add(label);
             }
         }
+        SlotLabel firstLabel = labelList.get(0);
+        firstLabel.setBackground(Color.YELLOW);
+        cs.set(firstLabel);
     }
     
     public void clearAll(){

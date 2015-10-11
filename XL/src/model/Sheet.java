@@ -21,8 +21,11 @@ public class Sheet extends Observable implements Environment{
 	}
 	
 	public void load(String fileName) throws FileNotFoundException{
+		clearAll();
 		XLBufferedReader reader = new XLBufferedReader(fileName);
         reader.load(sheet);
+        setChanged();
+        notifyObservers();
 	}
 	
 	public void put(String address, Slot slot){
@@ -46,7 +49,7 @@ public class Sheet extends Observable implements Environment{
 	public String getSlotValue(String address){
 		Slot s = getSlot(address);
 		if(s == null){
-			return "";
+			return "                    ";
 		} else if (s instanceof CommentSlot){
 			return ((CommentSlot) s).getCommentValue();
 		}
@@ -73,6 +76,12 @@ public class Sheet extends Observable implements Environment{
 			throw new XLException("Empty Slot " + address);
 		}
 		return s.value(this);
+	}
+	
+	public void clearAll(){
+		sheet = new HashMap<String, Slot>();
+		setChanged();
+		notifyObservers();
 	}
 
 }

@@ -36,7 +36,7 @@ public class Editor extends JTextField implements ActionListener, Observer {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-//		sl.clear();
+		sl.clear();
 		System.out.println("Wrote");
 		String address = cs.getAddress();
 		if(getText().isEmpty()){
@@ -48,7 +48,6 @@ public class Editor extends JTextField implements ActionListener, Observer {
 		} else {
 			try {
 				sheet.put(address, SlotFactory.generateSlot(address, getText()));
-//				sheet.put(address, SlotFactory.generateSlot(getText(), address));
 			} catch (XLException exc) {
 				sl.setText(exc.getMessage());
 			}

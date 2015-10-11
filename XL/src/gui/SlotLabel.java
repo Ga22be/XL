@@ -7,6 +7,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 import model.Sheet;
+import util.XLException;
 
 public class SlotLabel extends ColoredLabel implements MouseListener, Observer {
 	private CurrentSlot cs;
@@ -64,12 +65,13 @@ public class SlotLabel extends ColoredLabel implements MouseListener, Observer {
 
 	@Override
 	public void update(Observable o, Object arg) {
-//		setText(String.valueOf(sheet.getSlot(address).value(sheet)));
-		// Vi behöver en metod i sheet som kollar om det som finns på den
-		// addressen är en comment eller något annat och returnerar text om
-		// comment och ett tal i text annars.
-		
 		// TODO DISSABLED
-		setText(sheet.getSlotValue(address));
+		try{
+			setText(sheet.getSlotValue(address));			
+		} catch (XLException e) {
+			sl.setText(e.getMessage());
+		}
 	}
+	
+	
 }
