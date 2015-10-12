@@ -11,7 +11,7 @@ public class SlotFactory {
 		if (command.startsWith("#")) {
 			return new CommentSlot(address, command.substring(1));
 		} else if (command.contains(address)) {
-			return new CircularSlot(command, address);
+			return new CircularSlot(address, command);
 		} else {
 			ExprParser ex = new ExprParser();
 			Expr expr = null;

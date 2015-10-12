@@ -29,9 +29,22 @@ public class Sheet extends Observable implements Environment{
 	}
 	
 	public void put(String address, Slot slot){
+		checkOverflow(address, slot);
+		System.out.println("Here");
 		sheet.put(address, slot);
 		setChanged();
 		notifyObservers();
+	}
+	
+	private void checkOverflow(String address, Slot slot){
+		Slot oldSlot = getSlot(address);
+		CircularSlot cSlot = new CircularSlot(slot.address(), null);
+		sheet.put(address, cSlot);
+		try{
+			slot.value(this);
+		} finally {
+			sheet.put(address, oldSlot);
+		}
 	}
 	
 	public void replace(String address, Slot slot){

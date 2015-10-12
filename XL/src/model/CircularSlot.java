@@ -1,6 +1,7 @@
 package model;
 
 import model.expr.Environment;
+import util.XLException;
 
 public class CircularSlot implements Slot {
 
@@ -14,7 +15,7 @@ public class CircularSlot implements Slot {
 
 	@Override
 	public double value(Environment env) {
-		throw new IllegalArgumentException("Circular dependency in input");
+		throw new XLException("Circular dependency in input");
 	}
 	
 	@Override
