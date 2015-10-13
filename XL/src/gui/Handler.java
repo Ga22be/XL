@@ -13,7 +13,6 @@ public class Handler extends Observable implements Observer{
 
 	@Override
 	public void update(Observable o, Object arg) {
-		System.out.println("Sheet notified observer");
 		notifyObservers();
 	}
 

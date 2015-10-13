@@ -35,11 +35,5 @@ public class SlotLabels extends GridPanel {
         firstLabel.setBackground(Color.YELLOW);
         cs.set(firstLabel);
     }
-    
-    public void clearAll(){
-    	for(SlotLabel sl : labelList){
-    		sl.setText("");
-    	}
-    }
-    
+        
 }

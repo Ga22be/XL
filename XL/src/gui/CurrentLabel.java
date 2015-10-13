@@ -6,7 +6,6 @@ import java.util.Observer;
 
 public class CurrentLabel extends ColoredLabel implements Observer{
 	private CurrentSlot cs;
-	private Handler handler;
 	
     public CurrentLabel(CurrentSlot cs, Handler handler) {
         super("  ", Color.WHITE);
