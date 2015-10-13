@@ -4,10 +4,10 @@
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>36</x>
-      <y>6</y>
+      <x>60</x>
+      <y>12</y>
       <w>528</w>
-      <h>420</h>
+      <h>396</h>
     </coordinates>
     <panel_attributes>model
 --
@@ -18,7 +18,7 @@ fg=green</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>90</x>
+      <x>72</x>
       <y>48</y>
       <w>84</w>
       <h>42</h>
@@ -34,30 +34,32 @@ fg=red
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>90</x>
+      <x>72</x>
       <y>168</y>
-      <w>114</w>
-      <h>114</h>
+      <w>132</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>Sheet
 --
-- sheet: Map&lt;String, Expr&gt;
+- sheet: Map&lt;String, Slot&gt;
 --
-
-+ save(): void
++ Sheet(): ctor
++ save(String): void
 + load(String): void
 + put(String, Slot): void
-+ replace(String, Expr): void
+- checkOverflow(String, Slot): void
 + remove(String): void
-+ getExpr(String): Expr
++ getSlotValue(String): String
++ getSlotString(String: String
 + value(String): double
++ clearAll(): void
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>96</x>
+      <x>78</x>
       <y>84</y>
       <w>60</w>
       <h>96</h>
@@ -84,13 +86,13 @@ Enviroment</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>162</x>
+      <x>144</x>
       <y>84</y>
-      <w>138</w>
+      <w>156</w>
       <h>96</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>210.0;10.0;210.0;70.0;10.0;70.0;10.0;140.0</additional_attributes>
+    <additional_attributes>240.0;10.0;240.0;70.0;10.0;70.0;10.0;140.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -102,8 +104,8 @@ Enviroment</panel_attributes>
     </coordinates>
     <panel_attributes>XLBufferReader
 --
-+ XLBufferReader(String)
-+ load(Map&lt;String, Expr&gt;): void</panel_attributes>
++ XLBufferReader(String): ctor
++ load(Map&lt;String, Slot&gt;): void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -138,7 +140,7 @@ Enviroment</panel_attributes>
     </coordinates>
     <panel_attributes>XLPrintStream
 --
-+ XLPrintStream(String)
++ XLPrintStream(String): ctor
 + save(Set&lt;Entry&lt;String, Slot&gt;&gt;): void</panel_attributes>
     <additional_attributes/>
   </element>
@@ -167,83 +169,51 @@ Enviroment</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>342</x>
+      <x>336</x>
       <y>222</y>
-      <w>102</w>
-      <h>72</h>
+      <w>120</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Interface&gt;&gt;
 Slot
 --
-+ setExpr(Expr): void
-+ getExpr(): Expr
-+ value(): double
-+ address(): String</panel_attributes>
++ value(Environment): double
++ toString(): String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>90</x>
-      <y>336</y>
-      <w>114</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>Comment
---
-+ toString(): String
-+ toString(int): String
-+ value(Enviroment): double</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>48</x>
-      <y>66</y>
-      <w>54</w>
-      <h>306</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.
-Expr</panel_attributes>
-    <additional_attributes>70.0;10.0;10.0;10.0;10.0;490.0;70.0;490.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>348</x>
+      <x>336</x>
       <y>324</y>
-      <w>90</w>
-      <h>84</h>
+      <w>114</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>ExprSlot
 --
 - expr: Expr
-- address: String
 --
-+ setExpr(Expr): void
-+ getExpr(): Expr
-+ value(): double
-+ address(): String</panel_attributes>
++ ExprSlot(Expr): ctor
++ value(Environment): double
++ toString(): String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>240</x>
+      <x>210</x>
       <y>324</y>
-      <w>90</w>
-      <h>84</h>
+      <w>120</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>CommentSlot
 --
-- comment: Comment
-- address: String
+- comment: String
 --
-+ setExpr(Expr): void
-+ getExpr(): Expr
-+ value(): double
-+ address(): String</panel_attributes>
++ CommentSlot(String): ctor
++ value(Environment): double
++ toString(): String
++ getCommentValue(): String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -251,51 +221,50 @@ Expr</panel_attributes>
     <coordinates>
       <x>456</x>
       <y>324</y>
-      <w>90</w>
-      <h>84</h>
+      <w>120</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>CircularSlot
 --
 - command: String
 --
-+ setExpr(Expr): void
-+ getExpr(): Expr
-+ value(): double
-+ address(): String</panel_attributes>
++ CircularSlot(String): ctor
++ value(Environment): double
++ toString(): String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>390</x>
-      <y>288</y>
+      <y>264</y>
       <w>120</w>
-      <h>48</h>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;40.0;180.0;40.0;180.0;60.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0;180.0;80.0;180.0;100.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>390</x>
-      <y>288</y>
+      <y>264</y>
       <w>18</w>
-      <h>48</h>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>282</x>
-      <y>288</y>
+      <y>264</y>
       <w>126</w>
-      <h>48</h>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>190.0;10.0;190.0;40.0;10.0;40.0;10.0;60.0</additional_attributes>
+    <additional_attributes>190.0;10.0;190.0;80.0;10.0;80.0;10.0;100.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -307,7 +276,7 @@ Expr</panel_attributes>
     </coordinates>
     <panel_attributes>SlotFactory
 --
-+ generateSlot(String, String): Slot
+_+ generateSlot(String, String): Slot_
 </panel_attributes>
     <additional_attributes/>
   </element>
