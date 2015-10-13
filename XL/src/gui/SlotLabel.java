@@ -65,7 +65,6 @@ public class SlotLabel extends ColoredLabel implements MouseListener, Observer {
 
 	@Override
 	public void update(Observable o, Object arg) {
-		// TODO DISSABLED
 		try{
 			setText(sheet.getSlotValue(address));			
 		} catch (XLException e) {

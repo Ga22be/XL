@@ -30,27 +30,20 @@ public class Sheet extends Observable implements Environment{
 	
 	public void put(String address, Slot slot){
 		checkOverflow(address, slot);
-		System.out.println("Here");
 		sheet.put(address, slot);
 		setChanged();
 		notifyObservers();
 	}
 	
 	private void checkOverflow(String address, Slot slot){
-		Slot oldSlot = getSlot(address);
-		CircularSlot cSlot = new CircularSlot(slot.address(), null);
+		Slot oldSlot = sheet.get(address);
+		CircularSlot cSlot = new CircularSlot("Detta bör aldrig någonsin synas");
 		sheet.put(address, cSlot);
 		try{
 			slot.value(this);
 		} finally {
 			sheet.put(address, oldSlot);
 		}
-	}
-	
-	public void replace(String address, Slot slot){
-		sheet.put(address, slot);
-		setChanged();
-		notifyObservers();	
 	}
 	
 	public void remove(String address){
@@ -60,26 +53,22 @@ public class Sheet extends Observable implements Environment{
 	}
 	
 	public String getSlotValue(String address){
-		Slot s = getSlot(address);
+		Slot s = sheet.get(address);
 		if(s == null){
 			return "                    ";
 		} else if (s instanceof CommentSlot){
 			return ((CommentSlot) s).getCommentValue();
 		}
 		
-		return String.valueOf(getSlot(address).value(this));
+		return String.valueOf(sheet.get(address).value(this));
 	}
 	
 	public String getSlotString(String address){
-		Slot s = getSlot(address);
+		Slot s = sheet.get(address);
 		if(s == null){
 			return "";
 		}
-		return getSlot(address).toString();
-	}
-	
-	public Slot getSlot(String address){
-		return sheet.get(address);
+		return sheet.get(address).toString();
 	}
 	
 	@Override

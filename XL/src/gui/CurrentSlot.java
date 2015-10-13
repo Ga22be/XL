@@ -10,8 +10,7 @@ import model.Slot;
 import model.SlotFactory;
 
 public class CurrentSlot extends Observable {
-	// TODO Remove initiations
-	private SlotLabel currentSlotLabel; // = new SlotLabel(null, null, null, null, null);
+	private SlotLabel currentSlotLabel;
 	private Handler handler;
 	
 	public CurrentSlot(Handler handler) {

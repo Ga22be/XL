@@ -4,21 +4,14 @@ import model.expr.Environment;
 
 public class CommentSlot implements Slot {
 	private String comment;
-	private String address;
 	
-	public CommentSlot(String address, String comment) {
-		this.address = address;
+	public CommentSlot(String comment) {
 		this.comment = comment;
 	}
 	
 	@Override
 	public double value(Environment env) {
 		return 0;
-	}
-	@Override
-
-	public String address() {
-		return address;
 	}
 
 	@Override

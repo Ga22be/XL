@@ -16,14 +16,12 @@ public class Editor extends JTextField implements ActionListener, Observer {
 	private Sheet sheet;
 	private StatusLabel sl;
 	private CurrentSlot cs;
-	private Handler handler;
 	
     public Editor(CurrentSlot cs, StatusLabel sl, Sheet sheet, Handler handler) {
         setBackground(Color.WHITE);
         this.cs = cs;
         this.sl = sl;
         this.sheet = sheet;
-        this.handler = handler;
         addActionListener(this);
         handler.addObserver(this);
     }

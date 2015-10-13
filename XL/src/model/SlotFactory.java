@@ -9,9 +9,9 @@ public class SlotFactory {
 
 	public static Slot generateSlot(String address, String command) {
 		if (command.startsWith("#")) {
-			return new CommentSlot(address, command.substring(1));
+			return new CommentSlot(command.substring(1));
 		} else if (command.contains(address)) {
-			return new CircularSlot(address, command);
+			return new CircularSlot(command);
 		} else {
 			ExprParser ex = new ExprParser();
 			Expr expr = null;
@@ -20,7 +20,7 @@ public class SlotFactory {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			return new ExprSlot(address, expr);
+			return new ExprSlot(expr);
 		}
 	}
 }

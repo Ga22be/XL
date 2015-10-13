@@ -5,22 +5,15 @@ import util.XLException;
 
 public class CircularSlot implements Slot {
 
-	private String address;
 	private String command;
 	
-	public CircularSlot (String address, String command){
-		this.address = address;
+	public CircularSlot (String command){
 		this.command = command;
 	}
 
 	@Override
 	public double value(Environment env) {
 		throw new XLException("Circular dependency in input");
-	}
-	
-	@Override
-	public String address() {
-		return address;
 	}
 	
 	@Override

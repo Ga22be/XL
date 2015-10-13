@@ -42,8 +42,4 @@ public class SlotLabels extends GridPanel {
     	}
     }
     
-    // May not be needed
-    public List<SlotLabel> getList(){
-    	return labelList;
-    }
 }
