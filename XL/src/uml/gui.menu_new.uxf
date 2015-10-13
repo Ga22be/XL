@@ -9,7 +9,7 @@
       <w>544</w>
       <h>336</h>
     </coordinates>
-    <panel_attributes>EmptyPackage
+    <panel_attributes>gui.menu
 --
 bg=gray
 fg=blue
