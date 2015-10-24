@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>1002</w>
+      <h>504</h>
+    </coordinates>
+    <panel_attributes>gui.menu
+--
+bg=gray
+fg=blue
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>84</x>
+      <y>216</y>
+      <w>288</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>/gui.menu::OpenMenuItem/
+--
+#statusLabel: StatusLabel
+#xl: XL
+--
+#OpenMenuItem(XL xl, StatusLabel statusLabel, String title): ctor
+#action(String path): void
++actionPerformed(ActionEvent event): void
+#openDialog(JFileChooser fileChooser): int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>600</x>
+      <y>216</y>
+      <w>234</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>gui.menu::PrintMenuItem
+--
+-statusLabel: StatusLabel
+-xl: XL
+--
++PrintMenuItem(XL xl, StatusLabel statusLabel): ctor
++actionPerformed(ActionEvent event): void
++actionPerformed1(ActionEvent event): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>132</y>
+      <w>222</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>gui.menu::ClearMenuItem
+--
+-sheet: Sheet
+-cs: CurrentSlot
+--
++ClearMenuItem(Sheet sheet, CurrentSlot cs): ctor
++actionPerformed(ActionEvent e): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>132</y>
+      <w>192</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>gui.menu::CloseMenuItem
+--
+-xl: XL
+-xlList: XLList
+--
++CloseMenuItem(XL xl, XLList xlList): ctor
++actionPerformed(ActionEvent event): void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>6</x>
+      <y>354</y>
+      <w>288</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>gui.menu::LoadMenuItem
+--
+-sheet: Sheet
+--
++LoadMenuItem(XL xl, StatusLabel statusLabel, Sheet sheet): ctor
+#action(String path): void
+#openDialog(JFileChooser fileChooser): int
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>300</x>
+      <y>354</y>
+      <w>288</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>gui.menu::SaveMenuItem
+--
+-sheet: Sheet
+--
++SaveMenuItem(XL xl, StatusLabel statusLabel, Sheet sheet): ctor
+#action(String path): void
+#openDialog(JFileChooser fileChooser): int
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>60</x>
+      <y>132</y>
+      <w>174</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>gui.menu::ClearAllMenuItem
+--
+-sheet: Sheet
+--
++ClearAllMenuItem(Sheet sheet): ctor
++actionPerformed(ActionEvent e): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>678</x>
+      <y>132</y>
+      <w>192</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>gui.menu::NewMenuItem
+--
+-xl: XL
+--
++NewMenuItem(XL xl): ctor
++actionPerformed(ActionEvent event): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>600</x>
+      <y>354</y>
+      <w>234</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>gui.menu::WindowMenu
+--
+-xlList: XLList
+--
++WindowMenu(XLList xlList): ctor
++update(Observable observable, Object object): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>378</x>
+      <y>216</y>
+      <w>192</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>gui.menu::WindowMenuItem
+--
+-xl: XL
+--
++WindowMenuItem(XL xl): ctor
++actionPerformed(ActionEvent event): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>426</x>
+      <y>444</y>
+      <w>396</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>gui.menu::XLMenuBar
+--
++XLMenuBar(XL xl, XLList xlList, StatusLabel statusLabel, Sheet sheet, CurrentSlot cs): ctor
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>270</x>
+      <y>54</y>
+      <w>60</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>ActionListener</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>348</x>
+      <y>54</y>
+      <w>60</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>JMenuItem</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>168</x>
+      <y>66</y>
+      <w>222</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>350.0;10.0;350.0;80.0;10.0;80.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>96</x>
+      <y>66</y>
+      <w>216</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>340.0;10.0;340.0;50.0;10.0;50.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>372</x>
+      <y>108</y>
+      <w>18</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>294</x>
+      <y>66</y>
+      <w>18</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>372</x>
+      <y>102</y>
+      <w>156</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;240.0;20.0;240.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>294</x>
+      <y>66</y>
+      <w>276</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;440.0;50.0;440.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>294</x>
+      <y>66</y>
+      <w>456</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;740.0;50.0;740.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>498</x>
+      <y>102</y>
+      <w>282</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;450.0;20.0;450.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>30</x>
+      <y>66</y>
+      <w>282</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>450.0;10.0;450.0;50.0;10.0;50.0;10.0;300.0;90.0;300.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>42</x>
+      <y>108</y>
+      <w>144</w>
+      <h>174</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>220.0;10.0;10.0;10.0;10.0;270.0;70.0;270.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>294</x>
+      <y>66</y>
+      <w>186</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;290.0;50.0;290.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>468</x>
+      <y>108</y>
+      <w>18</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>108</y>
+      <w>168</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;260.0;10.0;260.0;230.0;190.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>294</x>
+      <y>66</y>
+      <w>606</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;990.0;50.0;990.0;330.0;900.0;330.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>636</x>
+      <y>306</y>
+      <w>60</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>JMenu</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>720</x>
+      <y>306</y>
+      <w>60</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>Observer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>564</x>
+      <y>306</y>
+      <w>60</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>JMenuBar</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>744</x>
+      <y>318</y>
+      <w>18</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>372</x>
+      <y>66</y>
+      <w>18</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>234</x>
+      <y>306</y>
+      <w>216</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0;340.0;40.0;340.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>144</x>
+      <y>306</y>
+      <w>108</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>160.0;10.0;160.0;40.0;10.0;40.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>588</x>
+      <y>318</y>
+      <w>18</w>
+      <h>138</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>660</x>
+      <y>318</y>
+      <w>18</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+</diagram>

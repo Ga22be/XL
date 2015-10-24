@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>2</zoom_level>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>106</x>
+      <y>258</y>
+      <w>362</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>gui
+--
+bg=gray
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>114</x>
+      <y>360</y>
+      <w>134</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>gui::SlotLabel
+--
+-cs: CurrentSlot
+-address: String
+-sheet: Sheet
+-sl: StatusLabel
+-handler: Handler
+--
++SlotLabel(String address, CurrentSlot cs, Sheet sheet, StatusLabel sl, Handler handler): ctor
++mouseClicked(MouseEvent e): void
++mouseEntered(MouseEvent e): void
++mouseExited(MouseEvent e): void
++mousePressed(MouseEvent e): void
++mouseReleased(MouseEvent e): void
++getAddress(): String
++update(Observable o, Object arg): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>346</x>
+      <y>400</y>
+      <w>84</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>gui::XL
+--
+-ROWS = 10, COLUMNS = 8: int
+-counter: XLCounter
+-statusLabel = new StatusLabel(): StatusLabel
+-xlList: XLList
+-sheet: Sheet
+--
++XL(XL oldXL): ctor
++XL(XLList xlList, XLCounter counter): ctor
++print(Graphics g, PageFormat pageFormat, int page): int
++rename(String title): void
++main(String[] args): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>226</x>
+      <y>452</y>
+      <w>54</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>gui::CurrentSlot
+--
+-currentSlotLabel: SlotLabel
+-handler: Handler
+--
++CurrentSlot(Handler handler): ctor
++getAddress(): String
++set(SlotLabel slotLabel): void
++clear(): void
++setWhite(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>284</x>
+      <y>452</y>
+      <w>56</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>gui::XLList
+--
+-list = new ArrayList&lt;XL&gt;(): List&lt;XL&gt;
+--
++add(XL xl): void
++isEmpty(): boolean
++iterator(): Iterator&lt;XL&gt;
++last(): XL
++remove(XL xl): void
++setChanged(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>114</x>
+      <y>442</y>
+      <w>108</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>gui::Editor
+--
+-sheet: Sheet
+-sl: StatusLabel
+-cs: CurrentSlot
+--
++Editor(CurrentSlot cs, StatusLabel sl, Sheet sheet, Handler handler): ctor
++update(Observable o, Object arg): void
++actionPerformed(ActionEvent e): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>324</x>
+      <y>360</y>
+      <w>138</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>gui::SlotLabels
+--
+-labelList: List&lt;SlotLabel&gt;
+-sheet: Sheet
+-sl: StatusLabel
+--
++SlotLabels(int rows, int cols, CurrentSlot cs, Handler handler, Sheet sheet, StatusLabel sl): ctor</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>218</x>
+      <y>332</y>
+      <w>84</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>gui::ColoredLabel
+--
++ColoredLabel(String text): ctor
++ColoredLabel(String text, Color color): ctor
++ColoredLabel(String text, Color color, int alignment): ctor</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>252</x>
+      <y>360</y>
+      <w>68</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>gui::CurrentLabel
+--
+-cs: CurrentSlot
+--
++CurrentLabel(CurrentSlot cs, Handler handler): ctor
++update(Observable arg0, Object arg1): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>252</x>
+      <y>392</y>
+      <w>68</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>gui::StatusLabel
+--
++StatusLabel(): ctor
++update(Observable observable, Object object): void
++clear(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>410</x>
+      <y>456</y>
+      <w>32</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>gui::XLCounter
+--
+-counter: int
+--
++increment(): void
++toString(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>346</x>
+      <y>452</y>
+      <w>60</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>gui::Handler
+--
++notifyObservers(): void
++update(Observable o, Object arg): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>162</x>
+      <y>280</y>
+      <w>32</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>gui::BorderPanel
+--
+#BorderPanel(): ctor</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>348</x>
+      <y>282</y>
+      <w>58</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>gui::GridPanel
+--
++GridPanel(int rows, int columns): ctor</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>364</x>
+      <y>304</y>
+      <w>42</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>gui::RowLabels
+--
+~RowLabels(int rows): ctor</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>214</x>
+      <y>300</y>
+      <w>146</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>gui::SheetPanel
+--
++SheetPanel(int rows, int columns, CurrentSlot cs, Handler handler, Sheet sheet, StatusLabel sl): ctor</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>124</x>
+      <y>312</y>
+      <w>112</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>gui::StatusPanel
+--
+#StatusPanel(StatusLabel statusLabel, CurrentSlot cs, Handler handler): ctor</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>250</x>
+      <y>268</y>
+      <w>12</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>JPanel</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>254</x>
+      <y>272</y>
+      <w>124</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0;600.0;30.0;600.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>378</x>
+      <y>290</y>
+      <w>6</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>174</x>
+      <y>272</y>
+      <w>86</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>410.0;10.0;410.0;30.0;10.0;30.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>174</x>
+      <y>288</y>
+      <w>6</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>174</x>
+      <y>288</y>
+      <w>124</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;600.0;50.0;600.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>250</x>
+      <y>318</y>
+      <w>12</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>JLabel</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>254</x>
+      <y>322</y>
+      <w>6</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>254</x>
+      <y>346</y>
+      <w>36</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;160.0;50.0;160.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>374</x>
+      <y>320</y>
+      <w>26</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+Observer
+--
++ update(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>288</x>
+      <y>330</y>
+      <w>102</w>
+      <h>34</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>490.0;10.0;490.0;130.0;10.0;130.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>168</x>
+      <y>346</y>
+      <w>92</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>440.0;10.0;440.0;50.0;10.0;50.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>152</x>
+      <y>330</y>
+      <w>20</w>
+      <h>8</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+MouseListener</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>160</x>
+      <y>336</y>
+      <w>6</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>162</x>
+      <y>330</y>
+      <w>228</w>
+      <h>34</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>1120.0;10.0;1120.0;110.0;10.0;100.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>378</x>
+      <y>290</y>
+      <w>34</w>
+      <h>74</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0;150.0;30.0;150.0;350.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>248</x>
+      <y>346</y>
+      <w>42</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>40.0;10.0;40.0;50.0;10.0;50.0;10.0;190.0;190.0;190.0;190.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>286</x>
+      <y>330</y>
+      <w>104</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>500.0;10.0;500.0;130.0;180.0;130.0;180.0;270.0;10.0;270.0;10.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>354</x>
+      <y>384</y>
+      <w>14</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>JFrame</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>396</x>
+      <y>384</y>
+      <w>20</w>
+      <h>8</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+Printable</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>404</x>
+      <y>390</y>
+      <w>6</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>388</y>
+      <w>6</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>268</x>
+      <y>414</y>
+      <w>42</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>Observable
+--
++ notifyObervers(): void
++ addObserver(Observer): void
+# setChanged(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>318</x>
+      <y>422</y>
+      <w>20</w>
+      <h>8</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+Iterable&lt;XL&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>286</x>
+      <y>428</y>
+      <w>6</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>326</x>
+      <y>428</y>
+      <w>6</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>252</x>
+      <y>428</y>
+      <w>40</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>180.0;10.0;180.0;100.0;10.0;100.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>180</x>
+      <y>330</y>
+      <w>210</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>1030.0;10.0;1030.0;130.0;710.0;130.0;710.0;410.0;10.0;410.0;10.0;560.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>196</x>
+      <y>418</y>
+      <w>22</w>
+      <h>8</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+ActionListener</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>204</x>
+      <y>424</y>
+      <w>6</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>144</x>
+      <y>418</y>
+      <w>18</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>JTextField</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>150</x>
+      <y>422</y>
+      <w>6</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>286</x>
+      <y>428</y>
+      <w>84</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0;400.0;100.0;400.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>320</x>
+      <y>330</y>
+      <w>70</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>330.0;10.0;330.0;130.0;10.0;130.0;10.0;410.0;100.0;410.0;100.0;570.0;280.0;570.0;280.0;610.0</additional_attributes>
+  </element>
+</diagram>
